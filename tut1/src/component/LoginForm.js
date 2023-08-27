@@ -21,7 +21,7 @@ export default function LoginForm() {
             console.log(response.data)
             localStorage.setItem("jwtToken",response.data.jwtToken)
             //window.location.href = "/Home";
-            window.location.href = "/showAllCompanyProfile";
+            window.location.href = "/allCompanies";
            }).catch((error)=>{
             console.log(error)
             

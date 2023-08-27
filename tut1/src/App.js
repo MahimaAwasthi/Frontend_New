@@ -2,7 +2,7 @@ import './App.css';
 import LoginForm from './component/LoginForm';
 import Home from './component/Home';
 import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
-import DisplayAllCompanies from './component/DisplayAllCompanies';
+import DisplayAllCompanies from './component/ShowAllCompanyProfile';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 

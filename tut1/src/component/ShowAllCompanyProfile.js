@@ -2,6 +2,7 @@ import { useEffect,useState } from "react"
 import axios from "axios"
 import InputField from "./InputField"
 import ExcelDownloadButton from "./ExcelDownloadButton"
+import Logout from "./Logout"
 
 const DisplayAllCompanies = ()=> {
     const [companyDetail,setAllCompanies] = useState([])
@@ -41,6 +42,8 @@ const updateDetails = (e) => {
 
 return(
     <div>
+        <Logout/>
+        <a href="/Home"> Home </a>
         <ExcelDownloadButton headers={headers} tableData = {companyDetail}></ExcelDownloadButton>
         {
         companyDetail.map((comp)=> {

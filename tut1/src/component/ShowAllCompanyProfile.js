@@ -53,6 +53,15 @@ return(
             <InputField  type="text" name="technicalRequirement" placeholder="Technical Requirement"  onChange={handleChange} value={isEditEnable === comp.id ? updatedCompanyDetail.technicalRequirement :comp.technicalRequirement} disabled={isEditEnable === comp.id ? false : true}/>
             <InputField type="text" name="experience" placeholder="Experience"  onChange={handleChange} value={isEditEnable === comp.id ? updatedCompanyDetail.experience :comp.experience} disabled={isEditEnable === comp.id ? false : true}/>
             <InputField type="text" name="packageOffered" placeholder="Package Offered"  onChange={handleChange} value={isEditEnable === comp.id ? updatedCompanyDetail.packageOffered :comp.packageOffered} disabled={isEditEnable === comp.id ? false : true}/>
+            <input type="submit" value="delete" onClick={(e)=> {
+                axios.delete(`http://localhost:8081/company/deleteCompanyProfile/${comp.id}`,{headers: {
+                    'Authorization': `Bearer ${localStorage.getItem("jwtToken")}`
+                }}).then((res) => {
+                    console.log(res.data)
+                }).catch((e)=> {
+                    console.log(e)
+                })
+            }}/>
             {
                 isEditEnable === comp.id ?
                 <input type="submit" value="Save" onClick={updateDetails} />

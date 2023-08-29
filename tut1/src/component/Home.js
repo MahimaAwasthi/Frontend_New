@@ -1,6 +1,7 @@
 import axios from "axios"
 import InputField from "./InputField";
 import { useState } from "react"
+import Logout from "./Logout";
 
 const Home = () => {
     const [companyDetail,setCompanyDetail] = useState({companyName:"",technicalRequirement:"",experience:"",packageOffered:""})
@@ -28,6 +29,8 @@ const Home = () => {
     }
     return (
         <div>
+            <Logout/>
+            <a href="/allCompanies"> showAllCompanies </a>
             <form onSubmit={saveCompanyName}>
             <InputField type="text" name="companyName" placeholder="Company Name"  onChange={handleChange} value={companyDetail.companyName}/>
             <InputField type="text" name="technicalRequirement" placeholder="Technical Requirement"  onChange={handleChange} value={companyDetail.technicalRequirement}/>
